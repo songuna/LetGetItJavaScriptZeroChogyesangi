@@ -34,3 +34,28 @@ input {
     padding-right: 1rem;
     font-size: 3rem;
 }
+
+button {
+    background: #828284;
+    border: 1px solid #454448;
+    font-size: 2rem;
+}
+
+/* nth-child(4n+2): 4번째 요소마다 스타일을 적용하는데 처음에만 두번째에 적용 */
+button:nth-child(4n+2),
+button:last-child {
+    background-color: orange;
+}
+
+button:hover {
+    opacity: .5;
+}
+
+.ac {
+    grid-column: 1/4;
+    background: #6A6A6C;
+}
+
+.zero {
+    grid-column: 1/3;
+}
