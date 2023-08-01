@@ -1,38 +1,22 @@
-class Calculator {
-    constructor(displayElement) {
-        this.displayElement = displayElement
-        this.displayContent = ''
-    }
+const buttons = document.querySelector('button');
+const displayElement = document.querySelector('input');
+let displayContent = '';
 
-    appendNumber(number) {
-        this.displayContent += number
-    }
-
-    updateDisplay() {
-        this.displayElement.value = this.displayContent
-    }
-}
-
-const buttons = document.querySelectorAll('button')
-const displayElement = document.querySelector('input')
-const calculator = new Calculator(displayElement)
-
-buttons.forEach(button => {
+for (const button of buttons) {
     button.addEventListener('click', () => {
         switch (button.dataset.type) {
             case 'operator':
-                console.log('operator')
-                break
+                console.log('operator');
+                break;
             case 'ac':
-                console.log('ac')
-                break
+                console.log('ac');
+                break;
             case 'equals':
-                console.log('equals')
-                break
+                console.log('equals');
+                break;
             default:
-                calculator.appendNumber(button.innerText)
-                calculator.updateDisplay()
-                break
+                displayContent += button.innerText;
+                displayElement.value = displayContent;
         }
-    })
-})
+    });
+}
