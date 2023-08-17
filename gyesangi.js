@@ -1,4 +1,4 @@
-const buttons = document.querySelector('button');
+const buttons = document.querySelectorAll('button');
 const displayElement = document.querySelector('input');
 let displayContent = '';
 
