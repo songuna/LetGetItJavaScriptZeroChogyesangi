@@ -1,7 +1,7 @@
 class Calculator {
     constructor(displayElement) {
         this.displayElement = displayElement
-        this.displayContent = ''
+        this.clear()
     }
 
     appendNumber(number) {
@@ -14,6 +14,11 @@ class Calculator {
 
     updateDisplay() {
         this.displayElement.value = this.displayContent
+    }
+
+    clear() {
+        this.displayContent = ''
+        this.displayElement.value = 0
     }
 }
 
@@ -29,7 +34,16 @@ buttons.forEach(button => {
                 calculator.appendOperator(button.innerText)
                 calculator.updateDisplay()
                 break
-            //...
+            case 'ac':
+                calculator.clear()
+                break
+            case 'equals':
+                console.log('equals')
+                break
+            default:
+                calculator.appendNumber(button.innerText)
+                calculator.updateDisplay()
+                break
         }
     })
 })
