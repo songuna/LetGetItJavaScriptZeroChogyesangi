@@ -2,11 +2,18 @@ class Calculator {
     constructor(displayElement) {
         this.displayElement = displayElement
         this.operatorCheck = true
+        this.equalsCheck = false
         this.clear()
     }
 
     appendNumber(number) {
-        this.displayContent += number
+        if (this.equalsCheck) {
+            this.displayContent = number
+            this.equalsCheck = false
+        } else {
+            this.displayContent += number
+        }
+        this.operatorCheck = false
     }
 
     appendOperator(operator) {
