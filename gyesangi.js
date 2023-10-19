@@ -18,7 +18,9 @@ class Calculator {
 
     appendOperator(operator) {
         if (this.operatorCheck) return false
-        this.displayContent += operator
+        if (this.equalsCheck) this.equalsCheck = false
+        thid.displayContent += operator
+        return this.operatorCheck += true
     }
 
     updateDisplay() {
