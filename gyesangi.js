@@ -32,6 +32,12 @@ class Calculator {
         this.displayElement.value = 0
         this.operatorCheck = true
     }
+
+    compute() {
+        if (this.operatorCheck) return
+        this.displayContent = eval(this.displayContent
+            .replace)
+    }
 }
 
 const buttons = document.querySelectorAll('button')
