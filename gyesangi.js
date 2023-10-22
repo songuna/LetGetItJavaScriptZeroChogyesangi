@@ -37,7 +37,8 @@ class Calculator {
         if (this.operatorCheck) return
         this.displayContent = eval(this.displayContent
             .replace('\u00d7', '*')
-            
+            .replace('\u00F7', '/')
+        )
     }
 }
 
